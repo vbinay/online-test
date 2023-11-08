@@ -1,19 +1,23 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import React, { useState, useEffect } from "react";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Home from "./pages/home/Home";
-import Navbar from "./comonents/Navbar";
-import Test from "./pages/test/Test";
+import Navbar from "./components/Navbar";
+import TestLandingPage from "./pages/test/TestLandingPage";
 import TestStart from "./pages/test/TestStart";
 import Instrunctions from "./pages/test/Instrunctions";
 import TestOnGo from "./pages/test/TestOnGo";
 import TestFile from "./pages/test/TestFile";
 import Result from "./pages/test/Result";
 import { useSelector } from "react-redux/es/hooks/useSelector";
+import Footer from "./pages/Footer/Footer";
+import RegistrationModal from "./pages/login/RegistrationModal";
+import LoginModal from "./pages/login/LoginModal";
+import NavBar2 from "./components/NavBar2";
 
 function App() {
+  //Changed something
   // const {isAuthenticated} = useSelector((state) => state.auth);
   // console.log(isAuthenticated);
   // const navigate = useNavigate();
@@ -30,18 +34,22 @@ function App() {
  
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
+      <NavBar2/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/test" element={<Test />} />
+        <Route path="/testlandingpage" element={<TestLandingPage />} />
         <Route path="/test/:id" element={<TestStart />} />
         <Route path="/instrunctions" element={<Instrunctions />} />
         <Route path="/testongo/:id" element={<TestOnGo />} />
         <Route path="/testfile" element={<TestFile />} />
         <Route path="/result" element={<Result />} />
       </Routes>
+      <Footer/>
+      <RegistrationModal/>
+      <LoginModal/>
     </div>
   );
 }

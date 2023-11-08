@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../../comonents/AdvancedButton'
+import { Button } from '../../components/AdvancedButton'
 import { NavLink } from 'react-router-dom'
 const TestCard = ({item}) => {
   return (
@@ -10,8 +10,7 @@ const TestCard = ({item}) => {
         <div className="test_subject"><b>Total Marks :</b> 200</div>
         <div className="test_subject"><b>Time :</b> 200 minuts</div>
         <NavLink key={item.test} to={`/test/${item.test}`}><Button className="button_register w-60  " variant="primary">Attempt Now </Button></NavLink>
-       
-          </div>
+                 </div>
           
       </div>
   )
